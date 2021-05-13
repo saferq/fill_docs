@@ -1,3 +1,4 @@
+//не понятно пока
 eel.expose(say_hello_js); // Expose this function to Python
 
 
