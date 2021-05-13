@@ -2,21 +2,15 @@
 <html>
   <head>
     <title>Hello, World!</title>
-
-    <!-- Include eel.js - note this file doesn't exist in the 'web' directory -->
     <script type="text/javascript" src="/eel.js"></script>
-    <script type="text/javascript">
-      eel.expose(say_hello_js); // Expose this function to Python
-      function say_hello_js(x) {
-        console.log("Hello from " + x);
-      }
-
-      say_hello_js("Javascript World!");
-      eel.say_hello_py("Javascript World!"); // Call a Python function
-    </script>
+    <script type="text/javascript" src="main.js"></script>
   </head>
 
   <body>
-    Hello, World!
+    <form onsubmit="pick_file(); return false;">
+      <input id="input-box" placeholder="Type folder here" value="" />
+      <button type="submit" onclick="eel.say_hello_py">Pick random file</button>
+    </form>
+    <div id="file-name">---</div>
   </body>
 </html>

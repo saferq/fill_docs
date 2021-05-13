@@ -2,13 +2,16 @@ import eel
 
 # Set web files folder and optionally specify which file types to check for eel.expose()
 #   *Default allowed_extensions are: ['.js', '.html', '.txt', '.htm', '.xhtml']
-eel.init('web', allowed_extensions=['.js', '.html'])
+eel.init('frontend')
+
 
 @eel.expose                         # Expose this function to Javascript
 def say_hello_py(x):
-    print('Hello from %s' % x)
+    print(f'py - say_hello_py: {x}')
+
 
 say_hello_py('Python World!')
 eel.say_hello_js('Python World!')   # Call a Javascript function
 
-eel.start('main.html', mode='chrome', size=(450,450))             # Start (this blocks and enters loop)
+# Start (this blocks and enters loop)
+eel.start('main.html', mode='chrome', size=(450, 450))
