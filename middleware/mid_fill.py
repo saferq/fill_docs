@@ -1,8 +1,8 @@
 import eel
 from backend.afd_helps import HelpsMetods
 
-HelpsMetods.convet_text_in_numbers
+convet_text = HelpsMetods.convet_text_in_numbers
 
 @eel.expose
-def convert_value_py():
-    return 0
+def convert_value(text):
+    return convet_text(text)
