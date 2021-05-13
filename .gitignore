@@ -1,0 +1,8 @@
+*.pyc
+.vscode/
+env*/
+res/
+build/
+dist/       
+build.bat
+afd_ggl.py
