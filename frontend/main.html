@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Eel Demo</title>
+    <title>Заполнение шаблонов</title>
+    <link rel="stylesheet" href="css/style.css" />
     <script type="text/javascript" src="/eel.js"></script>
-    <script type="text/javascript">
-      async function pick_file() {
-        let folder = document.getElementById("input-box").value;
-        let file_div = document.getElementById("file-name");
-
-        // Call into Python so we can access the file system
-        let random_filename = await eel.pick_file(folder)();
-        file_div.innerHTML = random_filename;
-      }
-    </script>
+    <script type="text/javascript" src="main.js"></script>
   </head>
 
-  <body>
-    <form onsubmit="pick_file(); return false;">
-      <input id="input-box" placeholder="Type folder here" value="C:\Windows" />
-      <button type="submit">Pick random file</button>
-    </form>
-    <div id="file-name">---</div>
+  <body body onresize="windowResize()">
+    <div class="container">
+      <div class="flexbase" id="flex1">
+        <h1>Заполнение</h1>
+        <form id="inputform" onsubmit="pick_file(); return false;">
+          <input id="input-box" placeholder="Номера строк" value="" />
+          <button type="submit">Заполнить акты</button>
+        </form>
+      </div>
+      <div class="flexbase" id="flex2">
+        <h1>Результат:</h1>
+        <div id="file-name">
+          <p>Заполни номера строк</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

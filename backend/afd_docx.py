@@ -16,9 +16,11 @@ class WorkWithDocx():
             name_file = self.format_name_file(context[name_file])
             print(f"{Back.GREEN}{Fore.BLACK}{row}: {name_file}{Style.RESET_ALL}")
             doc.save(name_file + '.docx')
+            return f"{row}: {name_file}"
         except:
             print(
                 f'{Back.RED}{Fore.BLACK}{row}: Ошибка. В папке "res" нет файла шаблона {context[template_file]}{Style.RESET_ALL}')
+            return f'Ошибка. В папке "res" нет файла шаблона {context[template_file]}'
 
     def format_name_file(self, text, length_name=35):
         """ 

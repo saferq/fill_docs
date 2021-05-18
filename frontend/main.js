@@ -1,14 +1,12 @@
-//не понятно пока
-eel.expose(say_hello_js); // Expose this function to Python
-
-
-function say_hello_js(x) {
-    console.log("Hello from " + x);
+async function pick_file() {
+    let inputText = document.getElementById("input-box").value;
+    let file_div = document.getElementById("file-name");
+    // Call into Python so we can access the file system
+    // Вызов Python, чтобы мы могли получить доступ к файловой системе
+    let random_filename = await eel.pick_file(inputText)();
+    file_div.innerHTML = random_filename;
 }
 
-say_hello_js("js - say_hello_1");
-
-eel.say_hello_py("js - say_hello_2"); // Call a Python function
-
-
-                                                        
+function windowResize() {
+    window.resizeTo(450, 450)
+}
