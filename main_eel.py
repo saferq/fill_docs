@@ -7,29 +7,12 @@ from backend import afd_helps
 from backend import afd_json
 from backend import afd_pandas
 
-# Set web files folder and optionally specify which file types to check for eel.expose()
-#   *Default allowed_extensions are: ['.js', '.html', '.txt', '.htm', '.xhtml']
-
-# convert_text_to_list = afd_helps.HelpsMetods().convet_text_in_numbers
-
-
-# eel.init('frontend')
-
-
-# @eel.expose
-# def pick_file(input_text):
-#     numbers_rows = convert_text_to_list(input_text)
-#     return numbers_rows
-
-
-# # Start (this blocks and enters loop)
-# eel.start('main.html', mode='chrome', size=(450, 450))
-
 class Main():
     def __init__(self):
         self.config = afd_json.WorkWithJson().get_data()
         # Получение таблицы из Гугл
-        self.ggl = afd_ggl.GoogleSheet(self.config)
+        creds = afd_json.WorkWithJson().get_creds()
+        self.ggl = afd_ggl.GoogleSheet(self.config, creds)
         self.help = afd_helps.HelpsMetods()
 
     def main(self, input_text):

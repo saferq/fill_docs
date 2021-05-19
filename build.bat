@@ -1,0 +1,1 @@
+".\env39\Scripts\pyinstaller.exe" "main.spec"

@@ -10,6 +10,7 @@ pandas = "*"
 colorama = "*"
 docxtpl = "*"
 eel = "*"
+cryptography = "*"
 
 [dev-packages]
 autopep8 = "*"
