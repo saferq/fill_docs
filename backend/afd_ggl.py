@@ -8,7 +8,7 @@ class GoogleSheet():
     """ Работа с google таблицей """
 
     def __init__(self, config, creds):
-        d_json = creds
+        self.cred_json = creds
         self.table_key = config['table_key']
 
     def get_values(self, sheet_name):

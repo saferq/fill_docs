@@ -7,6 +7,13 @@ body {
   font-family: Helvetica Cyrillic, Bastion, sans-serif;
 }
 
+body * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 h1, caption {
   font-size: 20px;
   font-weight: bold;
@@ -70,17 +77,31 @@ input, button {
 
 table {
   border-collapse: collapse;
+  font-family: monospace;
+  font-size: 16px;
 }
 
 table th, table td {
-  border: 2px solid gray;
+  border: 1px solid gray;
 }
 
 table th {
   text-align: center;
 }
 
+table th:first-child {
+  width: 60px;
+}
+
+table th:last-child {
+  width: 100%;
+}
+
 table td {
   padding: 0px 5px;
+}
+
+table td:first-child {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

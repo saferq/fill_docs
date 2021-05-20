@@ -7,12 +7,13 @@ from backend import afd_helps
 from backend import afd_json
 from backend import afd_pandas
 
+
 class Main():
     def __init__(self):
         self.config = afd_json.WorkWithJson().get_data()
         # Получение таблицы из Гугл
-        creds = afd_json.WorkWithJson().get_creds()
-        self.ggl = afd_ggl.GoogleSheet(self.config, creds)
+        self.creds = afd_json.WorkWithJson().get_creds()
+        self.ggl = afd_ggl.GoogleSheet(self.config, self.creds)
         self.help = afd_helps.HelpsMetods()
 
     def main(self, input_text):
@@ -42,9 +43,11 @@ if __name__ == '__main__':
         if input_text == '':
             return "<p><i>Введите номера строк</i></p>"
         else:
-            return_text = ''
-            for row in rows_namedoc:
-                return_text += "<p>" + row + "</p>"
+            return_text = '<caption>Вывод</caption><tr><th>Номер строки</th><th>Наименование</th></tr>'
+            for row, name in rows_namedoc:
+                # return_text += "<p>" + row + "</p>"
+                return_text += "<tr><td>" + \
+                    str(row) + "</td><td>" + name + "</td></tr>"
             return return_text
 
     eel.start('main.html', mode='chrome', size=(450, 450))

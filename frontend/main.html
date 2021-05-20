@@ -11,26 +11,24 @@
     <div class="container">
       <div class="flexbase" id="flex1">
         <h1>Заполнение</h1>
-        <form id="inputform" onsubmit="pick_file(); return false;">
+        <form
+          id="inputform"
+          autocomplete="off"
+          onsubmit="pick_file(); return false;"
+        >
           <input id="input-box" placeholder="Номера строк" value="" />
           <button type="submit">Заполнить акты</button>
         </form>
       </div>
       <div class="flexbase" id="flex2">
-        <table>
+        <table id="file-name">
           <caption>
-            Результат
+            Вывод
           </caption>
           <tr>
             <th>Номер строки</th>
             <th>Наименование</th>
           </tr>
-          <span id="file-name">
-            <tr>
-              <td></td>
-              <td>Номера строк</td>
-            </tr>
-          </span>
         </table>
       </div>
     </div>
